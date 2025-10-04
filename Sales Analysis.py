@@ -5,7 +5,7 @@ import os
 
 # --- Load dataset from repo ---
 file_path = os.path.join("data", "Clean_Superstore_Data.xlsx")
-df = pd.read_excel(file_path)
+df = pd.read_excel(DATA/Clean_Superstore_Data.xlsx)
 
 # --- Clean/transform dates ---
 df['Order_Date'] = pd.to_datetime(df['Order_Date'])
@@ -48,3 +48,4 @@ fig_quarter.update_traces(texttemplate='%{text:,.0f}', textposition="outside")
 fig_quarter.update_layout(xaxis_title="Quarter", yaxis_title="Total Sales")
 st.plotly_chart(fig_quarter, use_container_width=True)
 st.dataframe(quarterly_sales)
+
